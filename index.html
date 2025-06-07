@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация о людях</title>
+    <title>Light Cavalry</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <style>
@@ -41,7 +41,7 @@
         .section {
             min-height: 100vh;
             padding: 2rem;
-            padding-top: 5rem; /* Отступ сверху, чтобы контент не перекрывался навигацией */
+            padding-top: 5rem; /* отступ */
         }
         .info-block {
             background: rgba(20, 20, 20, 0.9);
@@ -50,15 +50,15 @@
             border-radius: 8px;
         }
         nav {
-            min-height: 4rem; /* Фиксированная высота навигации */
+            min-height: 4rem; /* шторка повыше */
         }
     </style>
 </head>
 <body>
-    <!-- Частицы на фоне -->
+    <!-- задристаный фон -->
     <div id="particles-js"></div>
 
-    <!-- Навигация -->
+    <!-- навигация -->
     <nav class="fixed top-0 w-full bg-black bg-opacity-90 p-4 z-10">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold text-[#1e90ff]">DoxInfo</div>
@@ -75,42 +75,28 @@
         <!-- Вкладка: Мама -->
         <div id="mom" class="tab-content info-block">
             <h2 class="text-3xl font-bold text-[#1e90ff] mb-4">[Мама] Информация</h2>
-            <p class="mb-2"><strong>Имя:</strong> [Введите имя]</p>
-            <p class="mb-2"><strong>Возраст:</strong> [Введите возраст]</p>
-            <p class="mb-2"><strong>Адрес:</strong> [Введите адрес]</p>
-            <p class="mb-2"><strong>Телефон:</strong> [Введите телефон]</p>
-            <p class="mb-2"><strong>Паспорт:</strong> [Введите серию и номер паспорта]</p>
-            <p class="mb-2"><strong>ИНН:</strong> [Введите ИНН]</p>
-            <p class="mb-2"><strong>СНИЛС:</strong> [Введите номер СНИЛС]</p>
-        </div>
-
-        <!-- Вкладка: Папа -->
-        <div id="dad" class="tab-content info-block">
-            <h2 class="text-3xl font-bold text-[#1e90ff] mb-4">[Папа] Информация</h2>
-            <p class="mb-2"><strong>Имя:</strong> [Введите имя]</p>
-            <p class="mb-2"><strong>Возраст:</strong> [Введите возраст]</p>
-            <p class="mb-2"><strong>Адрес:</strong> [Введите адрес]</p>
-            <p class="mb-2"><strong>Телефон:</strong> [Введите телефон]</p>
-            <p class="mb-2"><strong>Паспорт:</strong> [Введите серию и номер паспорта]</p>
-            <p class="mb-2"><strong>ИНН:</strong> [Введите ИНН]</p>
-            <p class="mb-2"><strong>СНИЛС:</strong> [Введите номер СНИЛС]</p>
+            <p class="mb-2"><strong>Имя:</strong> [Буйнова Мария Юрьевна]</p>
+            <p class="mb-2"><strong>Дата рождения:</strong> [07.12.1986]</p>
+            <p class="mb-2"><strong>Адрес:</strong> [607228 ОБЛ НИЖЕГОРОДСКАЯ Г АРЗАМАС УЛ НИЖЕГОРОДСКАЯ Д.20 КВ.53]</p>
+            <p class="mb-2"><strong>Телефон:</strong> [+79527799252, +79990778677, +78312984084, +79875592187]</p>
+            <p class="mb-2"><strong>Паспорт:</strong> [2206 874526]</p>
+            <p class="mb-2"><strong>ИНН:</strong> [524308006859]</p>
         </div>
 
         <!-- Вкладка: Он -->
         <div id="he" class="tab-content info-block">
             <h2 class="text-3xl font-bold text-[#1e90ff] mb-4">[Он] Информация</h2>
-            <p class="mb-2"><strong>Имя:</strong> [Введите имя]</p>
-            <p class="mb-2"><strong>Возраст:</strong> [Введите возраст]</p>
-            <p class="mb-2"><strong>Адрес:</strong> [Введите адрес]</p>
-            <p class="mb-2"><strong>Телефон:</strong> [Введите телефон]</p>
-            <p class="mb-2"><strong>Паспорт:</strong> [Введите серию и номер паспорта]</p>
-            <p class="mb-2"><strong>ИНН:</strong> [Введите ИНН]</p>
-            <p class="mb-2"><strong>СНИЛС:</strong> [Введите номер СНИЛС]</p>
+            <p class="mb-2"><strong>Имя:</strong> [Буйнов Роман Дмитриевич]</p>
+            <p class="mb-2"><strong>Дата рождения:</strong> [15.08.2008]</p>
+            <p class="mb-2"><strong>Адрес:</strong> [607228 ОБЛ НИЖЕГОРОДСКАЯ Г АРЗАМАС УЛ НИЖЕГОРОДСКАЯ Д.20 КВ.53]</p>
+            <p class="mb-2"><strong>Телефон:</strong> [+79290552870]</p>
+            <p class="mb-2"><strong>Паспорт:</strong> [2224 734851]</p>
+            <p class="mb-2"><strong>СНИЛС:</strong> [15466958614]</p>
         </div>
     </div>
 
     <script>
-        // Инициализация particles.js
+        // все что надо
         particlesJS('particles-js', {
             particles: {
                 number: { value: 100, density: { enable: true, value_area: 800 } },
@@ -129,29 +115,29 @@
             retina_detect: true
         });
 
-        // Логика вкладок
+        // интеллект 
         const buttons = document.querySelectorAll('.tab-button');
         const contents = document.querySelectorAll('.tab-content');
 
         function showTab(tabId) {
-            // Удаляем активный класс у всех вкладок и кнопок
+            // иди нахуй
             contents.forEach(content => content.classList.remove('active'));
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Добавляем активный класс к выбранной вкладке и кнопке
+            // кнопка с классом
             const content = document.getElementById(tabId);
             const button = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
             if (content && button) {
                 content.classList.add('active');
                 button.classList.add('active');
             } else {
-                // Если вкладка не найдена, показываем первую по умолчанию
+                // умолчание типо
                 contents[0].classList.add('active');
                 buttons[0].classList.add('active');
             }
         }
 
-        // Обработка кликов по кнопкам
+        // клики
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const tabId = button.getAttribute('data-tab');
@@ -161,19 +147,19 @@
             });
         });
 
-        // Проверяем хэш при загрузке страницы
+        // хэш
         window.addEventListener('load', () => {
             const hash = window.location.hash.replace('#', '');
             if (hash) {
                 showTab(hash);
             } else {
-                // По умолчанию показываем первую вкладку
+                // хуйня
                 contents[0].classList.add('active');
                 buttons[0].classList.add('active');
             }
         });
 
-        // Обработка изменений хэша (например, при использовании кнопок "назад/вперёд")
+        // бля заебал
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.replace('#', '');
             showTab(hash || 'mom');
