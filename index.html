@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация о людях</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <style>
+        body {
+            background: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button {
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .tab-button.active {
+            background-color: #1e90ff;
+            color: #000;
+        }
+        .tab-button:hover {
+            background-color: #1e90ff;
+            color: #000;
+        }
+        .section {
+            min-height: 100vh;
+            padding: 2rem;
+            padding-top: 5rem; /* Отступ сверху, чтобы контент не перекрывался навигацией */
+        }
+        .info-block {
+            background: rgba(20, 20, 20, 0.9);
+            border: 1px solid #1e90ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        nav {
+            min-height: 4rem; /* Фиксированная высота навигации */
+        }
+    </style>
+</head>
+<body>
+    <!-- Частицы на фоне -->
+    <div id="particles-js"></div>
+
+    <!-- Навигация -->
+    <nav class="fixed top-0 w-full bg-black bg-opacity-90 p-4 z-10">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-[#1e90ff]">DoxInfo</div>
+            <div class="flex space-x-4">
+                <button class="tab-button px-4 py-2 bg-gray-800 text-[#1e90ff] rounded-md" data-tab="mom">Мама</button>
+                <button class="tab-button px-4 py-2 bg-gray-800 text-[#1e90ff] rounded-md" data-tab="dad">Папа</button>
+                <button class="tab-button px-4 py-2 bg-gray-800 text-[#1e90ff] rounded-md" data-tab="he">Он</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент -->
+    <div class="container mx-auto section">
+        <!-- Вкладка: Мама -->
+        <div id="mom" class="tab-content info-block">
+            <h2 class="text-3xl font-bold text-[#1e90ff] mb-4">[Мама] Информация</h2>
+            <p class="mb-2"><strong>Имя:</strong> [Введите имя]</p>
+            <p class="mb-2"><strong>Возраст:</strong> [Введите возраст]</p>
+            <p class="mb-2"><strong>Адрес:</strong> [Введите адрес]</p>
+            <p class="mb-2"><strong>Телефон:</strong> [Введите телефон]</p>
+            <p class="mb-2"><strong>Паспорт:</strong> [Введите серию и номер паспорта]</p>
+            <p class="mb-2"><strong>ИНН:</strong> [Введите ИНН]</p>
+            <p class="mb-2"><strong>СНИЛС:</strong> [Введите номер СНИЛС]</p>
+        </div>
+
+        <!-- Вкладка: Папа -->
+        <div id="dad" class="tab-content info-block">
+            <h2 class="text-3xl font-bold text-[#1e90ff] mb-4">[Папа] Информация</h2>
+            <p class="mb-2"><strong>Имя:</strong> [Введите имя]</p>
+            <p class="mb-2"><strong>Возраст:</strong> [Введите возраст]</p>
+            <p class="mb-2"><strong>Адрес:</strong> [Введите адрес]</p>
+            <p class="mb-2"><strong>Телефон:</strong> [Введите телефон]</p>
+            <p class="mb-2"><strong>Паспорт:</strong> [Введите серию и номер паспорта]</p>
+            <p class="mb-2"><strong>ИНН:</strong> [Введите ИНН]</p>
+            <p class="mb-2"><strong>СНИЛС:</strong> [Введите номер СНИЛС]</p>
+        </div>
+
+        <!-- Вкладка: Он -->
+        <div id="he" class="tab-content info-block">
+            <h2 class="text-3xl font-bold text-[#1e90ff] mb-4">[Он] Информация</h2>
+            <p class="mb-2"><strong>Имя:</strong> [Введите имя]</p>
+            <p class="mb-2"><strong>Возраст:</strong> [Введите возраст]</p>
+            <p class="mb-2"><strong>Адрес:</strong> [Введите адрес]</p>
+            <p class="mb-2"><strong>Телефон:</strong> [Введите телефон]</p>
+            <p class="mb-2"><strong>Паспорт:</strong> [Введите серию и номер паспорта]</p>
+            <p class="mb-2"><strong>ИНН:</strong> [Введите ИНН]</p>
+            <p class="mb-2"><strong>СНИЛС:</strong> [Введите номер СНИЛС]</p>
+        </div>
+    </div>
+
+    <script>
+        // Инициализация particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: '#1e90ff' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: true },
+                size: { value: 2, random: true },
+                line_linked: { enable: true, distance: 120, color: '#1e90ff', opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 1.5, direction: 'none', random: true }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
+                modes: { repulse: { distance: 80 }, push: { particles_nb: 3 } }
+            },
+            retina_detect: true
+        });
+
+        // Логика вкладок
+        const buttons = document.querySelectorAll('.tab-button');
+        const contents = document.querySelectorAll('.tab-content');
+
+        function showTab(tabId) {
+            // Удаляем активный класс у всех вкладок и кнопок
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Добавляем активный класс к выбранной вкладке и кнопке
+            const content = document.getElementById(tabId);
+            const button = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+            if (content && button) {
+                content.classList.add('active');
+                button.classList.add('active');
+            } else {
+                // Если вкладка не найдена, показываем первую по умолчанию
+                contents[0].classList.add('active');
+                buttons[0].classList.add('active');
+            }
+        }
+
+        // Обработка кликов по кнопкам
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const tabId = button.getAttribute('data-tab');
+                showTab(tabId);
+                // Обновляем хэш в URL
+                window.location.hash = tabId;
+            });
+        });
+
+        // Проверяем хэш при загрузке страницы
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '');
+            if (hash) {
+                showTab(hash);
+            } else {
+                // По умолчанию показываем первую вкладку
+                contents[0].classList.add('active');
+                buttons[0].classList.add('active');
+            }
+        });
+
+        // Обработка изменений хэша (например, при использовании кнопок "назад/вперёд")
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '');
+            showTab(hash || 'mom');
+        });
+    </script>
+</body>
+</html>
